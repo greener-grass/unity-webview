@@ -127,7 +127,9 @@ extern "C" void UnitySendMessage(const char *, const char *, const char *);
         webView.UIDelegate = self;
         webView.navigationDelegate = self;
     } else {
-        webView = [[UIWebView alloc] initWithFrame:view.frame];
+        UIWebView* uiWebView = [[UIWebView alloc] initWithFrame:view.frame];
+        uiWebView.scalesPageToFit = TRUE;
+        webView = uiWebView;
         webView.delegate = self;
     }
     if (transparent) {
