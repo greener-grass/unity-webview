@@ -150,6 +150,10 @@ public class CWebViewPlugin {
             webView.addJavascriptInterface(mWebViewPlugin , "Unity");
 
             WebSettings webSettings = webView.getSettings();
+
+            webSettings.setLoadWithOverviewMode(true);
+            webSettings.setUseWideViewPort(true);
+
             webSettings.setSupportZoom(false);
             webSettings.setJavaScriptEnabled(true);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
